@@ -1,0 +1,9 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 80px); /* 4 columns now */
+    gap: 10px;
+}
+
+.zero {
+    grid-column: span 2; /* cleaner calculator look */
+}
