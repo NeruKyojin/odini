@@ -13,21 +13,27 @@ buttons.forEach(btn => {
         if(!isNaN(value)) {
             //input number
             current += value;
-            display.textContent = current;
-        }   else if (value === "=") {
+            display.textContent = current;  
+        }   else if (value === "=") { 
             calculate();
-            display.textContent = current;
-        } else {
+            display.textContent = current; 
+        } else if (value === "C"){
+            current = "";
+            previous = "";
+            operator = null;
+            display.textContent = "0";
+        }else { 
             //operator
             previous = current;
             current = "";
             operator = value;
-                if (current === "") return; // 🔥 prevents double operator bug
+                if (current === "") return; // /prevents double operator error
                     
                 previous = current;
                 current = "";
                 operator = value;
-        }
+                display.textContent = "0"
+        } 
 
         console.log(current,operator,previous);
     });
